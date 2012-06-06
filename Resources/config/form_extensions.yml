@@ -1,0 +1,40 @@
+services:
+    probesys.form.help_extension:
+           class: Probesys\AdminBundle\Form\Extension\HelpFieldTypeExtension
+           tags:
+                - { name: form.type_extension, alias: field } # the alias is the same than getExtendedType in the class
+
+    probesys.form.label_extension:
+           class: Probesys\AdminBundle\Form\Extension\LabelFieldTypeExtension
+           tags:
+                - { name: form.type_extension, alias: field } # the alias is the same than getExtendedType in the class
+
+    probesys.form.field_error_type:
+           class: Probesys\AdminBundle\Form\Extension\ErrorTypeFieldTypeExtension
+           tags:
+                - { name: form.type_extension, alias: field } # the alias is the same than getExtendedType in the class
+
+    probesys.form.legend_extension:
+           class: Probesys\AdminBundle\Form\Extension\LegendFormTypeExtension
+           arguments:
+                - { render_fieldset: %probesys_admin.form.render_fieldset%, show_legend: %probesys_admin.form.show_legend%, show_child_legend: %probesys_admin.form.show_child_legend% }
+           tags:
+                - { name: form.type_extension, alias: form } # the alias is the same than getExtendedType in the class
+
+    probesys.form.error_type_extension:
+           class: Probesys\AdminBundle\Form\Extension\ErrorTypeFormTypeExtension
+           arguments:
+                - { error_type: %probesys_admin.form.error_type% }
+           tags:
+                - { name: form.type_extension, alias: form } # the alias is the same than getExtendedType in the class
+
+    probesys.form.widget_extension:
+           class: Probesys\AdminBundle\Form\Extension\WidgetFieldTypeExtension
+           tags:
+                - { name: form.type_extension, alias: field } # the alias is the same than getExtendedType in the class
+
+    probesys.form.widget_collection_extension:
+           class: Probesys\AdminBundle\Form\Extension\WidgetCollectionFieldTypeExtension
+           tags:
+                - { name: form.type_extension, alias: field } # the alias is the same than getExtendedType in the class
+

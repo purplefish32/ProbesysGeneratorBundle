@@ -1,0 +1,17 @@
+#Generic
+generic:
+    dashboard: Accueil
+    list: Lister
+    create: Nouveau
+    show: Voir
+    edit: Editer
+    delete: Suprimer
+    cancel: Annuler
+    save: Enregistrer
+    save_and_add: Enregistrer et créer un noveau
+    save_and_edit: Enregistrer et editer
+    confirm: Valider
+#Bulk
+bulk:
+    delete: Suprimer la séléction
+    export: Exporter la séléction

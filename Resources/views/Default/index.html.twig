@@ -1,0 +1,86 @@
+{% extends 'ProbesysAdminBundle::base.html.twig' %}
+{% block content %}
+    <div class="span6">
+        <div class="row-fluid pannel">
+            <section>
+                <header>
+                    Todo
+                </header>
+                <article>
+                    Filter types :
+                    <ul>
+                        <li>case 'boolean':</li>
+                        <li>case 'date':</li>
+                        <li>case 'datetime':</li>
+                        <li>case 'timestamp':</li>
+                        <li>case 'enum':</li>
+                        <li>case 'string':</li>
+                        <li>case 'text':</li>
+                        <li>case 'belongs_to_association':</li>
+                    </ul>
+                </article>
+                <article>
+                    Selected items
+                    Should have at least delete and export but should allso generate all boolean values : publih/unpublish, ban/unban, yes/no ...
+                </article>
+                <article>
+                    Nested fields : <a href="http://rails-admin-tb.herokuapp.com/admin/player/new">http://rails-admin-tb.herokuapp.com/admin/player/new</a>
+                    <ul>
+                        <li>Simple -> select + autocomplete</li>
+                        <li>Multi -> multi select</li>
+                    </ul>
+                </article>
+                <article>
+                    Filter integer
+                    <ul>
+                        <li>=</li>
+                        <li><</li>
+                        <li>></li>
+                        <li><=</li>
+                        <li>>=</li>
+                        <li>!</li>
+                        <li>Between</li>
+                        <li>!Between</li>
+                    </ul>
+                </article>
+                <article>
+                    TODO
+                    - Messages confirm/delete ect...
+                    - Show and delete views tables
+                    - I18N
+                    - Edit bulk
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="span6">
+        <div class="row-fluid pannel">
+            <section>
+                <header>
+                    Shortcuts
+                </header>
+                <article>
+                    <strong>Goto Shortcuts :</strong>
+                    <ul>
+                        <li>g+u : Goto user</li>
+                        <li>g+u : Goto home</li>
+                    </ul>
+
+                    <strong>Regular shortcuts :</strong>
+                     <ul>
+                        <li>j : Move down (Done)</li>
+                        <li>k : Move up (Done)</li>
+                        <li>enter : view</li>
+                        <li>l : List</li>
+                        <li>n : New</li>
+                        <li>e : Export</li>
+                        <li>h : History</li>
+                        <li>x : Check (Done)</li>
+                        <li>d : delete</li>
+                        <li>u : update</li>
+                    </ul>
+                 </article>
+            </section>
+        </div><!--/row-->
+    </div>
+{% endblock content %}

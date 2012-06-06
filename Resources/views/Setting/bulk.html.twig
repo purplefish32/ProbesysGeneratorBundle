@@ -1,0 +1,47 @@
+{% extends 'ProbesysAdminBundle::base.html.twig' %}
+
+{% block content %}
+<div class="span12">
+    <div class="row-fluid">
+        <ul class="nav nav-tabs">
+            <li class="icon index_collection_link" rel="" title="">
+                <a href="{{ path('admin_setting') }}"><i class="icon-th-list"></i><span>{{ 'generic.list'|trans({}, 'ProbesysAdminBundle') }}</span></a>
+            </li>
+            <li class="icon new_collection_link" rel="" title="">
+                <a href="{{ path('admin_setting_new') }}" tabindex="2"><i class="icon-plus"></i><span>{{ 'generic.add_new'|trans({}, 'ProbesysAdminBundle') }}</span></a>
+            </li>
+        </ul>
+        <div class="alert alert-danger">
+            The following etities will be deleted
+        </div>
+        <table class="table table-striped index-table table-condensed">
+            <thead>
+                <tr>                    <th>{{ 'Id' }}</th>                    <th>{{ 'Setting name' }}</th>                    <th>{{ 'Setting value' }}</th>                </tr>
+            </thead>
+            <tbody>
+{% for entity in entities %}
+                <tr>                    <td><a href="{{ path('admin_setting_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>                    <td>{{ entity.settingname }}</td>                    <td>{{ entity.settingvalue }}</td>                </tr>
+{% endfor %}
+            </tbody>
+        </table>
+        <form method="post" id="bulk_confirm_setting" class="bulk_confirm" action="{{ path('admin_setting_bulk') }}">
+            <input type=hidden name="action" value="confirm">
+{% for entity in entities %}
+            <input type=hidden name="bulk_ids[]" value="{{ entity.id }}">
+{% endfor %}
+            <div class="form-actions">
+                <button type="submit" name="bulk_confirm" class="btn btn-danger">
+                    <i class="icon-white icon-ok"></i>
+                    {{ 'generic.confirm'|trans({}, 'ProbesysAdminBundle') }}
+                </button>
+                <span class="extra_buttons">
+                    <a href="{{ path('admin_setting') }}" class="btn">
+                        <i class="icon-remove"></i>
+                        {{ 'generic.cancel'|trans({}, 'ProbesysAdminBundle') }}
+                    </a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

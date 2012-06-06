@@ -1,0 +1,106 @@
+{% from 'ProbesysAdminBundle::flash.html.twig' import session_flash %}
+<!DOCTYPE html>
+<html lang="{{ getSetting('app_lang') }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ var_page_title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%
+  stylesheets
+    'bundles/probesysadmin/lib/bootstrap/css/bootstrap.css'
+    'bundles/probesysadmin/lib/bootstrap/css/bootstrap-responsive.css'
+    'bundles/probesysadmin/css/style.css'
+  filter='cssrewrite,yui_css'
+%}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le fav and touch icons -->
+        <!--
+        <link rel="shortcut icon" href="bootstrap/ico/favicon.ico">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+        -->
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="index" tabindex="1">{{ getSetting('app_name') }}</a>
+                    <div class="btn-group pull-right">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-user"></i>{{ app.user.username }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile">{{ i18n_profile }}</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">{{ i18n_logout }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class=""><a href="{{ path('admin_user') }}" tabindex="2">Users</a></li>
+                            <li class=""><a href="{{ path('admin_setting') }}" tabindex="2">Settings</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+            <div id="title_bar">
+                <div id="titlebar-left">
+                    <h1>{{ i18n_dashboard }} / Users</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                {% block content %}
+                {% endblock content %}
+            </div><!--/row-->
+            <hr>
+            <footer>
+                <p>&copy; Company 2012 - {% if getSetting('admin_email') %}<a href="mailto:{{ getSetting('admin_email') }}">Contactez l'administrateur</a>{% endif %}</p>
+            </footer>
+        </div><!--/.fluid-container-->
+
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!--
+        <script src="lib/datepicker/js/bootstrap-datepicker.js"></script>
+        -->
+        <!--
+        <script src="{{ asset('bundles/probesysadmin/lib/jquery-ui/js/jquery.ui.core.js') }}"></script>
+        <script src="{{ asset('bundles/probesysadmin/lib/jquery-ui/js/jquery.ui.widget.js') }}"></script>
+        <script src="{{ asset('bundles/probesysadmin/lib/jquery-ui/js/jquery.ui.position.js') }}"></script>
+        <script src="{{ asset('bundles/probesysadmin/lib/jquery-ui/js/jquery.ui.autocomplete.js') }}"></script>
+        -->
+        {%
+          javascripts
+            '@ProbesysAdminBundle/Resources/public/lib/bootstrap/js/jquery.js'
+            '@ProbesysAdminBundle/Resources/public/lib/bootstrap/js/bootstrap.min.js'
+            '@ProbesysAdminBundle/Resources/public/js/ra.filtering-multiselect.js'
+            '@ProbesysAdminBundle/Resources/public/js/ra.filtering-select.js'
+            '@ProbesysAdminBundle/Resources/public/js/keymaster.js'
+            '@ProbesysAdminBundle/Resources/public/js/ra.widgets.js'
+            '@ProbesysAdminBundle/Resources/public/js/scripts.js'
+          filter='yui_js'
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>
