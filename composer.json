@@ -1,0 +1,22 @@
+{
+    "name": "probesys/generator-bundle",
+    "description": "CRUD Generator",
+    "keywords": ["CRUD","Generator"],
+    "homepage": "http://probesys.com",
+    "type": "library",
+    "license": "Not yet defined",
+    "authors": [
+        {
+            "name": "Donovan Tengblad",
+            "email": "donovan.tengblad@probesys.com",
+            "homepage": "http://probesys.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Probesys\\GeneratorBundle": "" }
+    },
+    "target-dir": "Probesys/GeneratorBundle"
+}
