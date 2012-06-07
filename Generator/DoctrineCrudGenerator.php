@@ -231,8 +231,6 @@ class DoctrineCrudGenerator extends Generator
      */
     private function generateIndexView($dir)
     {
-        $fields = $this->metadata->fieldMappings;
-
         $this->renderFile($this->skeletonDir, 'views/index.html.twig', $dir.'/index.html.twig', array(
             'dir'               => $this->skeletonDir,
             'entity'            => $this->entity,
@@ -241,6 +239,8 @@ class DoctrineCrudGenerator extends Generator
             'record_actions'    => $this->getRecordActions(),
             'route_prefix'      => $this->routePrefix,
             'route_name_prefix' => $this->routeNamePrefix,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
@@ -258,6 +258,8 @@ class DoctrineCrudGenerator extends Generator
             'actions'           => $this->actions,
             'route_prefix'      => $this->routePrefix,
             'route_name_prefix' => $this->routeNamePrefix,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
@@ -274,6 +276,8 @@ class DoctrineCrudGenerator extends Generator
             'route_name_prefix' => $this->routeNamePrefix,
             'entity'            => $this->entity,
             'actions'           => $this->actions,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
@@ -290,6 +294,8 @@ class DoctrineCrudGenerator extends Generator
             'route_name_prefix' => $this->routeNamePrefix,
             'entity'            => $this->entity,
             'actions'           => $this->actions,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
@@ -308,6 +314,8 @@ class DoctrineCrudGenerator extends Generator
             'actions'           => $this->actions,
             'route_prefix'      => $this->routePrefix,
             'route_name_prefix' => $this->routeNamePrefix,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
@@ -326,6 +334,8 @@ class DoctrineCrudGenerator extends Generator
             'actions'           => $this->actions,
             'route_prefix'      => $this->routePrefix,
             'route_name_prefix' => $this->routeNamePrefix,
+            //Added by Donovan Tengblad
+            'bundle_name'       => $this->bundle->getName(),
         ));
     }
 
