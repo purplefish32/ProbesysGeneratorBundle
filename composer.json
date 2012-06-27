@@ -1,7 +1,7 @@
 {
     "name": "probesys/generator-bundle",
-    "description": "CRUD Generator",
-    "keywords": ["CRUD","Generator"],
+    "description": "Probesys Generator Bundle",
+    "keywords": ["Probesys","Generator"],
     "homepage": "http://probesys.com",
     "type": "library",
     "license": "Not yet defined",
