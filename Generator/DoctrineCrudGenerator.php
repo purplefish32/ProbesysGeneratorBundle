@@ -112,7 +112,7 @@ class DoctrineCrudGenerator extends Generator
             $this->generateBulkView($dir);
         }
 
-        $this->generateTestClass();
+        //$this->generateTestClass();
         $this->generateConfiguration();
     }
 
@@ -203,26 +203,26 @@ class DoctrineCrudGenerator extends Generator
      * Generates the functional test class only.
      *
      */
-    private function generateTestClass()
-    {
-        $parts = explode('\\', $this->entity);
-        $entityClass = array_pop($parts);
-        $entityNamespace = implode('\\', $parts);
+    // private function generateTestClass()
+    // {
+    //     $parts = explode('\\', $this->entity);
+    //     $entityClass = array_pop($parts);
+    //     $entityNamespace = implode('\\', $parts);
 
-        $dir    = $this->bundle->getPath() .'/Tests/Controller';
-        $target = $dir .'/'. str_replace('\\', '/', $entityNamespace).'/'. $entityClass .'ControllerTest.php';
+    //     $dir    = $this->bundle->getPath() .'/Tests/Controller';
+    //     $target = $dir .'/'. str_replace('\\', '/', $entityNamespace).'/'. $entityClass .'ControllerTest.php';
 
-        $this->renderFile($this->skeletonDir, 'tests/test.php', $target, array(
-            'route_prefix'      => $this->routePrefix,
-            'route_name_prefix' => $this->routeNamePrefix,
-            'entity'            => $this->entity,
-            'entity_class'      => $entityClass,
-            'namespace'         => $this->bundle->getNamespace(),
-            'entity_namespace'  => $entityNamespace,
-            'actions'           => $this->actions,
-            'dir'               => $this->skeletonDir,
-        ));
-    }
+    //     $this->renderFile($this->skeletonDir, 'tests/test.php', $target, array(
+    //         'route_prefix'      => $this->routePrefix,
+    //         'route_name_prefix' => $this->routeNamePrefix,
+    //         'entity'            => $this->entity,
+    //         'entity_class'      => $entityClass,
+    //         'namespace'         => $this->bundle->getNamespace(),
+    //         'entity_namespace'  => $entityNamespace,
+    //         'actions'           => $this->actions,
+    //         'dir'               => $this->skeletonDir,
+    //     ));
+    // }
 
     /**
      * Generates the index.html.twig template in the final bundle.
