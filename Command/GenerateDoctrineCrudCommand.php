@@ -12,7 +12,6 @@
 //Donovan Tengblad : Changed namespace
 namespace Probesys\GeneratorBundle\Command;
 
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -22,7 +21,6 @@ use Probesys\GeneratorBundle\Generator\DoctrineCrudGenerator;
 use Sensio\Bundle\GeneratorBundle\Generator\DoctrineFormGenerator;
 use Sensio\Bundle\GeneratorBundle\Command\Helper\DialogHelper;
 use Sensio\Bundle\GeneratorBundle\Manipulator\RoutingManipulator;
-use Doctrine\ORM\Mapping\MappingException;
 
 /**
  * Generates a CRUD for a Doctrine entity.

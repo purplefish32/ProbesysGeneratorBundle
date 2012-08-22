@@ -19,7 +19,7 @@ namespace Probesys\GeneratorBundle\Command;
  */
 class Validators
 {
-    static public function validateBundleNamespace($namespace)
+    public static function validateBundleNamespace($namespace)
     {
         if (!preg_match('/Bundle$/', $namespace)) {
             throw new \InvalidArgumentException('The namespace must end with Bundle.');
@@ -50,7 +50,7 @@ class Validators
         return $namespace;
     }
 
-    static public function validateBundleName($bundle)
+    public static function validateBundleName($bundle)
     {
         if (!preg_match('/Bundle$/', $bundle)) {
             throw new \InvalidArgumentException('The bundle name must end with Bundle.');
@@ -59,13 +59,13 @@ class Validators
         return $bundle;
     }
 
-    static public function validateTargetDir($dir, $bundle, $namespace)
+    public static function validateTargetDir($dir, $bundle, $namespace)
     {
         // add trailing / if necessary
         return '/' === substr($dir, -1, 1) ? $dir : $dir.'/';
     }
 
-    static public function validateFormat($format)
+    public static function validateFormat($format)
     {
         $format = strtolower($format);
 
@@ -76,7 +76,7 @@ class Validators
         return $format;
     }
 
-    static public function validateEntityName($entity)
+    public static function validateEntityName($entity)
     {
         if (false === $pos = strpos($entity, ':')) {
             throw new \InvalidArgumentException(sprintf('The entity name must contain a : ("%s" given, expecting something like AcmeBlogBundle:Blog/Post)', $entity));
@@ -85,7 +85,7 @@ class Validators
         return $entity;
     }
 
-    static public function getReservedWords()
+    public static function getReservedWords()
     {
         return array(
             'abstract',

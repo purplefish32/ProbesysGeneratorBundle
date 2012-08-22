@@ -39,8 +39,8 @@ class DoctrineCrudGenerator extends Generator
     /**
      * Constructor.
      *
-     * @param Filesystem $filesystem A Filesystem instance
-     * @param string $skeletonDir Path to the skeleton directory
+     * @param Filesystem $filesystem  A Filesystem instance
+     * @param string     $skeletonDir Path to the skeleton directory
      */
     public function __construct(Filesystem $filesystem, $skeletonDir)
     {
@@ -51,12 +51,12 @@ class DoctrineCrudGenerator extends Generator
     /**
      * Generate the CRUD controller.
      *
-     * @param BundleInterface $bundle A bundle object
-     * @param string $entity The entity relative class name
-     * @param ClassMetadataInfo $metadata The entity class metadata
-     * @param string $format The configuration format (xml, yaml, annotation)
-     * @param string $routePrefix The route name prefix
-     * @param array $needWriteActions Wether or not to generate write actions
+     * @param BundleInterface   $bundle           A bundle object
+     * @param string            $entity           The entity relative class name
+     * @param ClassMetadataInfo $metadata         The entity class metadata
+     * @param string            $format           The configuration format (xml, yaml, annotation)
+     * @param string            $routePrefix      The route name prefix
+     * @param array             $needWriteActions Wether or not to generate write actions
      *
      * @throws \RuntimeException
      */
