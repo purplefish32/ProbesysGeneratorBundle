@@ -11,10 +11,10 @@
 
 namespace Probesys\GeneratorBundle\Command;
 
-use Symfony\Bundle\DoctrineBundle\Mapping\MetadataFactory;
-use Symfony\Bundle\DoctrineBundle\Command\DoctrineCommand;
+use Doctrine\Bundle\DoctrineBundle\Mapping\MetadataFactory;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
-abstract class GenerateDoctrineCommand extends DoctrineCommand
+abstract class GenerateDoctrineCommand extends ContainerAwareCommand
 {
     protected function parseShortcutNotation($shortcut)
     {
