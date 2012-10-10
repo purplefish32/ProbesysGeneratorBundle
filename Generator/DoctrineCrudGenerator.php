@@ -112,7 +112,7 @@ class DoctrineCrudGenerator extends Generator
             $this->generateBulkView($dir);
         }
 
-        $this->generateTestClass();
+        //$this->generateTestClass();
         $this->generateConfiguration();
     }
 
