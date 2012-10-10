@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Probesys\Bundle\GeneratorBundle\Command\Helper;
+namespace Probesys\GeneratorBundle\Command\Helper;
 
 use Symfony\Component\Console\Helper\DialogHelper as BaseDialogHelper;
 use Symfony\Component\Console\Output\OutputInterface;
